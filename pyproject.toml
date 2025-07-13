@@ -1,7 +1,7 @@
 [project]
 name = "unit-converter"
 version = "0.1.0"
-description = "Add your description here"
+description = "A simple web app that can convert between different units of measurement"
 requires-python = ">=3.12"
 dependencies = [
     "flask>=3.1.1",
