@@ -92,7 +92,7 @@ load_dotenv()
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 
 
-@app.route('/')
+@app.route('/', methods=["GET", "POST"])
 @app.route("/length", methods=["GET", "POST"])
 def length():
     form = LengthForm()
