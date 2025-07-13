@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <h2 class="fs-3">Result of your calculation</h2>
+  <p class="fs-2 fw-semibold">{{ results.value }} {{ results.from_unit }} = {{ results.converted_value }} {{ results.to_unit }}</p>
+  <a class="btn btn-outline-primary btn-lg" href="{{ url_for(btn_redirect) }}">Reset</a>
+{% endblock content %}

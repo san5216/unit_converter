@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <form action="" method="post">
+    {{ form.csrf_token }}
+    <fieldset class="form-group">
+      <div class="form-group mb-3">
+        {{ form.conversion_value.label(class="form-label") }}
+
+        {% if form.conversion_value.errors %}
+          {{ form.conversion_value(class="form-control form-control-lg is-invalid") }}
+          <div class="invalid-feedback">
+            {% for error in form.conversion_value.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+
+          </div>
+        {% else %}
+          {{ form.conversion_value(class="form-control form-control-lg") }}
+        {% endif %}
+
+
+      </div>
+      <div class="form-group mb-3">
+        {{ form.convert_from.label(class="form-label") }}
+        {{ form.convert_from(class="form-select form-select-lg") }}
+      </div>
+      <div class="form-group mb-3">
+        {{ form.convert_to.label(class="form-label") }}
+        {{ form.convert_to(class="form-select form-select-lg") }}
+      </div>
+      <div class="form-group">
+        {{ form.submit(class="btn btn-outline-primary btn-lg") }}
+      </div>
+    </fieldset>
+
+  </form>
+{% endblock content %}
